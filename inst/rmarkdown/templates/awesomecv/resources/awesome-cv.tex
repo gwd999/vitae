@@ -64,7 +64,7 @@ $endif$
 $if(profilepic)$
 \photo{$profilepic$}
 $endif$
-\name{$name$}{}
+\name{$name$}{$if(surname)$$surname$$endif$}
 
 $if(position)$
 \position{$position$}
@@ -139,9 +139,7 @@ $endfor$
 % 2019-02-14 Chris Umphlett - add flexibility to the document name in footer, rather than have it be static Curriculum Vitae
 \makecvfooter
   {$date$}
-  $if(docname)$
-    {$name$~~~·~~~$docname$}
-  $endif$	
+    {$name$$if(surname)$ $surname$$endif$~~~·~~~$if(docname)$$docname$$else$Curriculum Vitae$endif$}
   {\thepage}
 
 
